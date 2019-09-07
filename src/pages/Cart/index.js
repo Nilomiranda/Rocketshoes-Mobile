@@ -1,7 +1,9 @@
+/* eslint-disable quote-props */
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, Button } from 'react-native';
 
 import { Container } from '../../Components/Container';
+import Header from '../../Components/Header';
 
 export default function Cart() {
   return (
@@ -12,5 +14,7 @@ export default function Cart() {
 }
 
 Cart.navigationOptions = {
-  title: 'ROCKETSHOES',
+  headerTitle: <Header />,
+  headerLeft: null,
+  // prettier-ignore
 };

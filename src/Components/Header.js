@@ -31,14 +31,14 @@ const LogoContainer = styled.View`
   align-items: center;
 `;
 
-export default function Header() {
+export default function Header({ navigate }) {
   return (
     <MainView>
       <LogoContainer class="logo">
         <AppTitle>Rocketshoes</AppTitle>
         <Image source={require('../assets/images/shoe.png')} style={{ width: 34, height: 24 }} />
       </LogoContainer>
-      <Icon name="basket" color="#FFF" size={30} />
+      <Icon name="basket" color="#FFF" size={30} onPress={navigate} />
     </MainView>
   );
 }
