@@ -36,7 +36,7 @@ export default function Cart() {
   );
 }
 
-Cart.navigationOptions = {
-  headerTitle: <Header />,
+Cart.navigationOptions = ({ navigation }) => ({
+  headerTitle: <Header goBack={() => navigation.navigate('Home')} />,
   headerLeft: null,
-};
+});

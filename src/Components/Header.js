@@ -31,11 +31,11 @@ const LogoContainer = styled.View`
   align-items: center;
 `;
 
-export default function Header({ navigate }) {
+export default function Header({ navigate, goBack }) {
   return (
     <MainView>
       <LogoContainer class="logo">
-        <AppTitle>Rocketshoes</AppTitle>
+        <AppTitle onPress={goBack}>Rocketshoes</AppTitle>
         <Image source={require('../assets/images/shoe.png')} style={{ width: 34, height: 24 }} />
       </LogoContainer>
       <Icon name="basket" color="#FFF" size={30} onPress={navigate} />
