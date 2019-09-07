@@ -1,6 +1,7 @@
+/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
-  background: #222;
+  background: #191920;
 `;

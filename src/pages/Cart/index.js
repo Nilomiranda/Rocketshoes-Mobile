@@ -10,3 +10,7 @@ export default function Cart() {
     </Container>
   );
 }
+
+Cart.navigationOptions = {
+  title: 'ROCKETSHOES',
+};

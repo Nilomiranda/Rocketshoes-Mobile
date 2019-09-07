@@ -3,6 +3,7 @@ import { Text, Button } from 'react-native';
 import propTypes from 'prop-types';
 
 import { Container } from '../../Components/Container';
+import Header from '../../Components/Header';
 
 export default function Home({ navigation }) {
   return (
@@ -17,4 +18,8 @@ Home.propTypes = {
   navigation: propTypes.shape({
     navigate: propTypes.func.isRequired,
   }).isRequired,
+};
+
+Home.navigationOptions = {
+  headerTitle: <Header />,
 };
