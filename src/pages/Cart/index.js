@@ -1,14 +1,37 @@
 /* eslint-disable quote-props */
 import React from 'react';
-import { Text, Button } from 'react-native';
+
+import CartItem from '../../Components/CartItem';
 
 import { Container } from '../../Components/Container';
 import Header from '../../Components/Header';
+import {
+  CardList,
+  Footer,
+  Total,
+  TotalLabel,
+  PurchaseButton,
+  CartTotal,
+  ButtonLabel,
+} from './styles';
 
 export default function Cart() {
   return (
     <Container>
-      <Text>Hello from cart</Text>
+      <CardList>
+        <CartItem />
+        <CartItem />
+        <CartItem />
+        <Footer>
+          <Total>
+            <TotalLabel>Total</TotalLabel>
+            <CartTotal>$1619,10</CartTotal>
+          </Total>
+          <PurchaseButton>
+            <ButtonLabel>Place Order</ButtonLabel>
+          </PurchaseButton>
+        </Footer>
+      </CardList>
     </Container>
   );
 }
@@ -16,5 +39,4 @@ export default function Cart() {
 Cart.navigationOptions = {
   headerTitle: <Header />,
   headerLeft: null,
-  // prettier-ignore
 };

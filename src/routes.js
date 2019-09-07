@@ -22,9 +22,9 @@ const appNavigator = createStackNavigator(
   //     },
   //   },
   // },
-  // {
-  //   initialRouteName: 'Home',
-  // },
+  {
+    initialRouteName: 'Home',
+  },
 );
 
 appNavigator.navigationOptions = {
