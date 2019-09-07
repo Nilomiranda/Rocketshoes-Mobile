@@ -1,8 +1,9 @@
 /* eslint-disable global-require */
 import styled from 'styled-components/native';
 import React from 'react';
-import { Image } from 'react-native';
+import { Image, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import propTypes from 'prop-types';
 
 import shoe from '../assets/images/shoe.png';
 
@@ -39,6 +40,12 @@ export default function Header({ navigate, goBack }) {
         <Image source={require('../assets/images/shoe.png')} style={{ width: 34, height: 24 }} />
       </LogoContainer>
       <Icon name="basket" color="#FFF" size={30} onPress={navigate} />
+      <Text style={{ color: '#FFF' }}>1</Text>
     </MainView>
   );
 }
+
+Header.propTypes = {
+  navigate: propTypes.func.isRequired,
+  goBack: propTypes.func.isRequired,
+};
