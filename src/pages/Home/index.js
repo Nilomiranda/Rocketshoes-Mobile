@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
-import {Text, Button} from 'react-native';
+import {FlatList} from 'react-native';
 import propTypes from 'prop-types';
 
 import {Container} from '../../Components/Container';
 import Header from '../../Components/Header';
+import StoreItem from '../../Components/StoreItem';
+
 export default class Home extends Component {
   static propTypes = {
     navigation: propTypes.shape({
@@ -20,8 +22,7 @@ export default class Home extends Component {
 
     return (
       <Container>
-        <Text>Hello from Home</Text>
-        <Button title="Go to cart" onPress={() => navigation.navigate('Cart')} />
+        <FlatList horizontal={true} data={['a', 'b']} renderItem={({item}) => <StoreItem />} />
       </Container>
     );
   }
