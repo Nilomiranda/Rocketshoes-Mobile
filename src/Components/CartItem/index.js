@@ -35,14 +35,14 @@ function CartItem() {
       <Footer>
         <ChangeQuantity>
           <Icon
-            name="plus-circle-outline"
+            name="minus-circle-outline"
             color="#7159C1"
             size={24}
             backgroundColor="transparent"
           />
           <Quantity />
           <Icon
-            name="minus-circle-outline"
+            name="plus-circle-outline"
             color="#7159C1"
             size={24}
             backgroundColor="transparent"
