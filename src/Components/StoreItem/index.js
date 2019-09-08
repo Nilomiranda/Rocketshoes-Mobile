@@ -2,6 +2,7 @@
 import React from 'react';
 import { Image } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import propTypes from 'prop-types';
 
 import {
   Container,
@@ -16,16 +17,18 @@ import {
 
 Icon.loadFont();
 
-function StoreItem() {
+function StoreItem({
+  id, title, price, image,
+}) {
   return (
     <Container>
       <Image
-        source={require('../../assets/images/show_product.png')}
+        source={{ uri: image }}
         style={{ width: 200, height: 200, borderTopLeftRadius: 6 }}
       />
       <ProductDetails>
-        <ProductTitle>Smooth Confortable Walking Shoes</ProductTitle>
-        <ProductPrice>$179,90</ProductPrice>
+        <ProductTitle>{title}</ProductTitle>
+        <ProductPrice>{price}</ProductPrice>
         <AddButton>
           <ProductQuantity>
             <Icon size={12} color="#FFF" name="cart-plus" />
@@ -37,5 +40,12 @@ function StoreItem() {
     </Container>
   );
 }
+
+StoreItem.propTypes = {
+  id: propTypes.number.isRequired,
+  title: propTypes.string.isRequired,
+  price: propTypes.number.isRequired,
+  image: propTypes.string.isRequired,
+};
 
 export default StoreItem;
