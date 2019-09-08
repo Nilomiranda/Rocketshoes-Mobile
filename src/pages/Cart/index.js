@@ -34,7 +34,7 @@ class Cart extends Component {
         <CardList>
           {
             products.map(product => (
-              <CartItem key={product.id} title={product.title} price={product.price} image={product.image}/>
+              <CartItem key={product.id} id={product.id} title={product.title} price={product.price} image={product.image}/>
             ))
           }
           <Footer>
