@@ -44,8 +44,10 @@ const CartAmount = styled.Text`
   align-items: center;
   font-weight: bold;
   text-align: center;
+  padding-top: 3px;
+  font-size: 12px;
   position: absolute;
-  top: 15;
+  top: 12;
   right: 23;
 `;
 

@@ -1,6 +1,7 @@
 /* eslint-disable global-require */
 import React from 'react';
 import { Image } from 'react-native';
+import propTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {
@@ -17,17 +18,17 @@ import {
 
 Icon.loadFont();
 
-function CartItem() {
+function CartItem({ title, price, image }) {
   return (
     <Container>
       <ProductDetails>
         <Image
-          source={require('../../assets/images/show_product.png')}
+          source={{ uri: image }}
           style={{ width: 80, height: 80 }}
         />
         <ProductInfo>
-          <ProductTitle>Smooth and Confortable Walking Shoe</ProductTitle>
-          <ProductPrice>$179,90</ProductPrice>
+          <ProductTitle>{title}</ProductTitle>
+          <ProductPrice>{price}</ProductPrice>
         </ProductInfo>
 
         <Icon name="delete-forever" size={24} color="#7159c1" />
@@ -53,5 +54,11 @@ function CartItem() {
     </Container>
   );
 }
+
+CartItem.propTypes = {
+  title: propTypes.string.isRequired,
+  price: propTypes.number.isRequired,
+  image: propTypes.string.isRequired,
+};
 
 export default CartItem;

@@ -20,19 +20,26 @@ Icon.loadFont();
 
 class StoreItem extends Component {
   static propTypes = {
+    id: propTypes.number.isRequired,
     title: propTypes.string.isRequired,
     price: propTypes.number.isRequired,
     image: propTypes.string.isRequired,
   };
 
   addToCart = () => {
-    const { test } = this.props;
+    const { addItem, title, price, image, id } = this.props;
+    const product = {
+      title,
+      price,
+      image,
+      id
+    }
 
-    test();
+    addItem(product);
   }
 
   render() {
-    const { title, price, image } = this.props;
+    const { title, price, image, id } = this.props;
 
     return (
       <Container>
@@ -58,7 +65,7 @@ class StoreItem extends Component {
 
 const mapDispatchToProps = (dispatch) => (
   {
-    test: () => dispatch({ type: 'ADD_TO_CART' })
+    addItem: (product) => dispatch({ type: 'ADD_TO_CART', product })
   }
 )
 
