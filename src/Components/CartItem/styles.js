@@ -26,7 +26,7 @@ export const ChangeQuantity = styled.View`
 
 export const ProductInfo = styled.View`
   width: 163px;
-  height: 60px;
+  /* height: 60px; */
 `;
 
 export const ProductPrice = styled.Text`

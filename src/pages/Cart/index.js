@@ -18,7 +18,7 @@ import {
 
 class Cart extends Component {
   static navigationOptions = ({ navigation }) => ({
-    headerTitle: <Header goBack={() => navigation.navigate('Home')} />,
+    headerTitle: <Header goBack={() => navigation.navigate('Home')} navigate={() => {}} />,
     headerLeft: null,
   });
 
@@ -34,12 +34,9 @@ class Cart extends Component {
         <CardList>
           {
             products.map(product => (
-              <CartItem title={product.title} price={product.price} image={product.image}/>
+              <CartItem key={product.id} title={product.title} price={product.price} image={product.image}/>
             ))
           }
-          {/* <CartItem />
-          <CartItem />
-          <CartItem /> */}
           <Footer>
             <Total>
               <TotalLabel>Total</TotalLabel>
